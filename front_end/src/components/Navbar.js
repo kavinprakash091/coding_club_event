@@ -49,7 +49,7 @@ export default function Navbar() {
         <Link to="/signin">
           LOGIN <i className="fa-solid fa-right-to-bracket"> </i>{' '}
         </Link>{' '}
-        <Link to="/admin">
+        <Link to="/admin-signin">
           ADMIN <i className="fa-solid fa-user-secret"> </i>{' '}
         </Link>{' '}
       </div>{' '}
