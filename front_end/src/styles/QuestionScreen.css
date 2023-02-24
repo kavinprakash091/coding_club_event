@@ -1,0 +1,32 @@
+.question-page {
+  height: 90vh;
+  width: 100%;
+}
+
+.question-header {
+  width: 80%;
+  padding-left: 3%;
+  margin: 2% auto;
+  font-size: 2rem;
+  font-weight: 600;
+  border-bottom: 2px solid #00a2ff;
+}
+
+.question-container {
+  width: 80%;
+  margin: 1% auto;
+}
+
+.question-description,
+.format,
+.sample-input {
+  width: 100%;
+  padding: 1%;
+  margin: 1% auto;
+  text-align: justify;
+  border-radius: 1rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  box-shadow: #0091ff38 0px 0.0625em 0.0625em, #037afa5e 0px 0.125em 0.5em,
+    #ffffff1a 0px 0px 0px 1px inset;
+}
