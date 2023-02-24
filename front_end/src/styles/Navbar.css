@@ -1,0 +1,123 @@
+.navbar {
+  width: 94%;
+  padding: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  z-index: 0;
+}
+
+.logo-container {
+  height: 5rem;
+  width: 5rem;
+}
+
+.logo-container > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.waviy {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.waviy div {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff00ff;
+  text-transform: uppercase;
+  animation: flip 3s infinite;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+@keyframes flip {
+  0%,
+  80% {
+    transform: rotateY(360deg);
+  }
+}
+
+div.container {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  z-index: 0;
+}
+
+div.container a,
+.profile a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0px 10px;
+  padding: 1%;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.profile a {
+  padding: 3%;
+  font-weight: 400;
+}
+
+div.container a:hover,
+.profile a:hover {
+  color: #00a2ff;
+}
+
+div.borderXwidth a:before,
+div.borderXwidth a:after,
+.profile a:before,
+.profile a:after {
+  position: absolute;
+  opacity: 0;
+  width: 0%;
+  height: 2px;
+  content: '';
+  background: #00a2ff;
+  transition: all 0.3s;
+}
+
+div.borderXwidth a:before,
+.profile a:before {
+  left: 0px;
+  top: 0px;
+}
+
+div.borderXwidth a:after,
+.profile a:after {
+  right: 0px;
+  bottom: 0px;
+}
+
+div.borderXwidth a:hover:before,
+div.borderXwidth a:hover:after,
+.profile a:hover:before,
+.profile a:hover:after {
+  opacity: 1;
+  width: 100%;
+}
