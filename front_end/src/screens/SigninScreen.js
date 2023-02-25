@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../styles/SigninScreen.css';
 import Axios from 'axios';
 import { getError } from '../utils.js';
+import { Store } from '../Store.js';
+import { toast } from 'react-toastify';
 
 export default function SigninScreen() {
   const [rollno, setRollno] = useState('');
@@ -10,6 +12,9 @@ export default function SigninScreen() {
   const [department, setDepartment] = useState('');
   const [year, setYear] = useState('');
   const [section, setSection] = useState('');
+
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { userInfo } = state;
 
   const registerHandler = async (e) => {
     e.preventDefault();
@@ -22,9 +27,11 @@ export default function SigninScreen() {
         year,
         section,
       });
-      console.log(data);
+      ctxDispatch({ type: 'USER_SIGNIN', payload: data });
+      localStorage.setItem('userInfo', JSON.stringify(data));
+      toast.success(data.name + ' loggedin successfully!');
     } catch (err) {
-      alert(getError(err));
+      toast.error(getError(err));
     }
   };
 
@@ -47,19 +54,17 @@ export default function SigninScreen() {
           </div>{' '}
           <div className="input-field-tags">
             <label>
-              {' '}
-              Name <div className="required-element"> * </div>{' '}
-            </label>{' '}
+              Name <div className="required-element"> * </div>
+            </label>
             <input
               type="text"
               onChange={(e) => setName(e.target.value)}
               className="input-fields"
               required
-            />{' '}
-          </div>{' '}
+            />
+          </div>
           <div className="input-field-tags">
             <label>
-              {' '}
               Email <div className="required-element"> * </div>{' '}
             </label>{' '}
             <input

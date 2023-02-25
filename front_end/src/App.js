@@ -1,4 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import AdminScreen from './screens/AdminScreen';
 import AdminSigninScreen from './screens/AdminSigninScreen';
 import GuidelinesScreen from './screens/GuidelinesScreen';
@@ -9,6 +11,11 @@ import SigninScreen from './screens/SigninScreen';
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer
+        position="top-right"
+        style={{ marginTop: '3%' }}
+        limit={1}
+      />
       <Routes>
         <Route path="/signin" element={<SigninScreen />} />
         <Route path="/" element={<HomeScreen />} />

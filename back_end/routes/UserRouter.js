@@ -8,7 +8,10 @@ const userRouter = express.Router();
 userRouter.put(
   '/signin',
   expressAsyncHandler(async (req, res) => {
-    const users = await User.findOne({ email: req.body.email });
+    const users = await User.findOne({
+      email: req.body.email,
+      rollno: req.body.rollno,
+    });
     if (users) {
       res.status(404).send({ message: 'Already registered!' });
       return;
