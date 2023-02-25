@@ -16,6 +16,12 @@ function App() {
         <Route path="/admin-signin" element={<AdminSigninScreen />} />
         <Route path="/admin" element={<AdminScreen />} />
         <Route path="/stage1" element={<Question1Screen />} />
+        <Route path="/stage2" element={<Question1Screen />} />
+        <Route path="/stage3" element={<Question1Screen />} />
+        <Route path="/stage4" element={<Question1Screen />} />
+        <Route path="/stage5" element={<Question1Screen />} />
+        <Route path="/stage6" element={<Question1Screen />} />
+        <Route path="/stage7" element={<Question1Screen />} />
       </Routes>{' '}
     </BrowserRouter>
   );

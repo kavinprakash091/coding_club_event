@@ -30,3 +30,97 @@
   box-shadow: #0091ff38 0px 0.0625em 0.0625em, #037afa5e 0px 0.125em 0.5em,
     #ffffff1a 0px 0px 0px 1px inset;
 }
+
+.stage-form-container {
+  width: 80%;
+  margin: 3% auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stage-form {
+  width: 35%;
+}
+
+.input-field-tags label {
+  display: flex;
+  align-items: center;
+}
+
+.stage-input-fields {
+  outline: 1px solid #000000;
+  color: #000000;
+}
+
+.coding-image-container {
+  width: 45%;
+  height: 40vh;
+  background-color: red;
+}
+
+.coding-image-container > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.pagination-button-container {
+  width: 80%;
+  margin: 2% auto;
+  padding: 5% 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.pagination-button-container a {
+  text-decoration: none;
+}
+
+.previous-button,
+.next-button,
+.continue-button {
+  padding: 1% 3%;
+  font-size: 1.2rem;
+  border: none;
+  color: #ffffff;
+  background-color: #00a2ff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.continue-button {
+  padding: 2% 3%;
+}
+
+.left-arrow {
+  animation: leftarrow 2s infinite;
+}
+
+@keyframes leftarrow {
+  0%,
+  40%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+}
+
+.right-arrow {
+  animation: rightarrow 2s infinite;
+}
+
+@keyframes rightarrow {
+  0%,
+  40%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(10px);
+  }
+}

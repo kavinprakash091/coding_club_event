@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/QuestionScreen.css';
 
 export default function Question1Screen() {
+  const [password, setPassword] = useState('');
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
   return (
     <section className="question-page">
       <header className="question-header"> Question 1 </header>{' '}
@@ -50,7 +55,37 @@ export default function Question1Screen() {
             to make his move so , Zhang loses the game.
           </p>
         </div>
-      </main>{' '}
+      </main>
+      <section className="stage-form-container">
+        <form className="stage-form" onSubmit={submitHandler}>
+          <div className="input-field-tags">
+            <label>
+              {' '}
+              Password <div className="required-element"> * </div>{' '}
+            </label>{' '}
+            <input
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              className="input-fields stage-input-fields"
+              required
+            />
+          </div>{' '}
+          <button type="submit" className="continue-button">
+            Continue{' '}
+          </button>{' '}
+        </form>
+        <div className="coding-image-container">
+          <img src={require('../assets/coding.gif')} alt="Coding" />
+        </div>
+      </section>
+      <section className="pagination-button-container">
+        <Link to="/" className="previous-button">
+          <i className="fa-solid fa-angles-left left-arrow"></i> Previous
+        </Link>
+        <Link to="/stage2" className="next-button">
+          Next <i className="fa-solid fa-angles-right right-arrow"></i>
+        </Link>
+      </section>
     </section>
   );
 }
