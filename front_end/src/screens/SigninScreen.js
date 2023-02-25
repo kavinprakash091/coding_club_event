@@ -14,7 +14,6 @@ export default function SigninScreen() {
   const [section, setSection] = useState('');
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { userInfo } = state;
 
   const registerHandler = async (e) => {
     e.preventDefault();

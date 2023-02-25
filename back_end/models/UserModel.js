@@ -8,7 +8,6 @@ const userSchema = mongoose.Schema(
     department: { type: String, required: true },
     year: { type: String, required: true },
     section: { type: String, required: true },
-    isAdmin: { type: String, default: false, required: true },
   },
   {
     timestamps: true,

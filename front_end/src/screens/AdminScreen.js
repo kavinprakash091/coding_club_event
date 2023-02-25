@@ -1,8 +1,29 @@
-import React, { useState } from 'react';
+import Axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import { Store } from '../Store';
 import '../styles/AdminScreen.css';
+import { getError } from '../utils';
 
 export default function AdminScreen() {
   const [stage, setStage] = useState(0);
+
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { userList } = state;
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const { data } = await Axios.get('/users/logincount');
+        ctxDispatch({ type: 'USER_LISTS', payload: data });
+      } catch (err) {
+        toast.error(getError(err));
+      }
+    };
+    fetchUsers();
+  }, []);
+
+  console.log(userList);
   return (
     <section className="admin-page">
       <header className="admin-header"> ADMIN </header>{' '}
@@ -82,15 +103,24 @@ export default function AdminScreen() {
       </section>{' '}
       <main className="stage-table-container">
         <table className="stage-table">
-          <tr>
-            <th> S.No </th> <th> Name </th> <th> Roll No </th> <th> Email </th>{' '}
-            <th> Time </th>{' '}
-          </tr>{' '}
-          <tr>
-            {' '}
-            <td> 1 </td> <td> Kavin P </td> <td> 20CSR091 </td>{' '}
-            <td> kavinp .20 cse @kongu.edu </td> <td> 10.00 </td>{' '}
-          </tr>{' '}
+          <thead>
+            <tr>
+              <th> S.No </th> <th> Name </th> <th> Roll No </th>
+              <th> Email </th>
+              <th> Time </th>
+            </tr>
+          </thead>
+          <tbody>
+            {userList.map((data, idx) => (
+              <tr key={idx + 1}>
+                <td> {idx + 1} </td>
+                <td> {data.name} </td>
+                <td> {data.rollno} </td>
+                <td> {data.email} </td>
+                <td> {data.createdAt.slice(11, 19)} </td>
+              </tr>
+            ))}
+          </tbody>
         </table>{' '}
       </main>{' '}
     </section>
