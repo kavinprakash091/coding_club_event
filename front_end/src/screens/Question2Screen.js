@@ -17,12 +17,12 @@ export default function Question1Screen() {
     e.preventDefault();
     if (password === '12345') {
       try {
-        if (!stages.includes(1)) {
+        if (!stages.includes(2)) {
           const rollno = userInfo.rollno;
           const name = userInfo.name;
           const email = userInfo.email;
           const { data } = await Axios.put(
-            '/stages/stage1',
+            '/stages/stage2',
             {
               rollno,
               name,
@@ -33,9 +33,9 @@ export default function Question1Screen() {
           stages.push(data.stage);
           ctxDispatch({ type: 'STAGE', payload: stages });
           localStorage.setItem('stages', JSON.stringify(stages));
-          navigate('/stage2');
+          navigate('/stage3');
         } else {
-          navigate('/stage2');
+          navigate('/stage3');
         }
       } catch (err) {
         toast.error(getError(err));
@@ -46,7 +46,7 @@ export default function Question1Screen() {
   };
   return (
     <section className="question-page">
-      <header className="question-header"> Question 1 </header>{' '}
+      <header className="question-header"> Question 2 </header>{' '}
       <main className="question-container">
         <div className="question-description">
           <p>
@@ -69,7 +69,7 @@ export default function Question1Screen() {
         </div>{' '}
         <div className="format">
           <h3> INPUT: - </h3> <p> Input contains two integers A and B. </p>{' '}
-          <h3> CONSTRAINTS: - </h3> <p> 0 & lt; A, B & lt; 10 ^ 15 </p>{' '}
+          <h3> CONSTRAINTS: - </h3> <p> 0 &lt; A, B &lt; 10 ^ 15 </p>{' '}
           <h3> OUTPUT: - </h3>{' '}
           <p>
             Print“ YunShu” if YunShu wins the game and“ Zhang” if Zhang wins the
@@ -111,11 +111,11 @@ export default function Question1Screen() {
         </div>{' '}
       </section>{' '}
       <section className="pagination-button-container">
-        <Link to="/" className="previous-button">
+        <Link to="/stage1" className="previous-button">
           <i className="fa-solid fa-angles-left left-arrow"> </i> Previous{' '}
         </Link>{' '}
-        {stages.includes(1) && (
-          <Link to="/stage2" className="next-button">
+        {stages.includes(2) && (
+          <Link to="/stage3" className="next-button">
             Next <i className="fa-solid fa-angles-right right-arrow"> </i>{' '}
           </Link>
         )}

@@ -17,12 +17,12 @@ export default function Question1Screen() {
     e.preventDefault();
     if (password === '12345') {
       try {
-        if (!stages.includes(1)) {
+        if (!stages.includes(7)) {
           const rollno = userInfo.rollno;
           const name = userInfo.name;
           const email = userInfo.email;
           const { data } = await Axios.put(
-            '/stages/stage1',
+            '/stages/stage7',
             {
               rollno,
               name,
@@ -33,9 +33,9 @@ export default function Question1Screen() {
           stages.push(data.stage);
           ctxDispatch({ type: 'STAGE', payload: stages });
           localStorage.setItem('stages', JSON.stringify(stages));
-          navigate('/stage2');
+          navigate('/finish');
         } else {
-          navigate('/stage2');
+          navigate('/finish');
         }
       } catch (err) {
         toast.error(getError(err));
@@ -111,14 +111,9 @@ export default function Question1Screen() {
         </div>{' '}
       </section>{' '}
       <section className="pagination-button-container">
-        <Link to="/" className="previous-button">
+        <Link to="/stage6" className="previous-button">
           <i className="fa-solid fa-angles-left left-arrow"> </i> Previous{' '}
         </Link>{' '}
-        {stages.includes(1) && (
-          <Link to="/stage2" className="next-button">
-            Next <i className="fa-solid fa-angles-right right-arrow"> </i>{' '}
-          </Link>
-        )}
       </section>{' '}
     </section>
   );

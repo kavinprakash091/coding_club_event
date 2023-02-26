@@ -10,6 +10,9 @@ const initialState = {
   userList: localStorage.getItem('userList')
     ? JSON.parse(localStorage.getItem('userList'))
     : [],
+  stages: localStorage.getItem('stages')
+    ? JSON.parse(localStorage.getItem('stages'))
+    : [],
 };
 
 const reducer = (state, action) => {
@@ -18,6 +21,8 @@ const reducer = (state, action) => {
       return { ...state, userInfo: action.payload };
     case 'USER_LISTS':
       return { ...state, userList: action.payload };
+    case 'STAGE':
+      return { ...state, stages: action.payload };
     default:
       return state;
   }
