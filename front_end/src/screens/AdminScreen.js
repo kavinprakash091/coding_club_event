@@ -9,21 +9,108 @@ export default function AdminScreen() {
   const [stage, setStage] = useState(0);
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { userList } = state;
+  const { userList, stage1, stage2, stage3, stage4, stage5, stage6, stage7 } =
+    state;
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const { data } = await Axios.get('/users/logincount');
+        localStorage.setItem('userLists', JSON.stringify(data));
         ctxDispatch({ type: 'USER_LISTS', payload: data });
       } catch (err) {
         toast.error(getError(err));
       }
     };
+    const fetchStage1 = async () => {
+      try {
+        const { data } = await Axios.get('/stages/stage1count');
+        localStorage.setItem('stage1', JSON.stringify(data));
+        ctxDispatch({ type: 'STAGE_1', payload: data });
+      } catch (err) {
+        toast.error(getError(err));
+      }
+    };
+    const fetchStage2 = async () => {
+      try {
+        const { data } = await Axios.get('/stages/stage2count');
+        localStorage.setItem('stage2', JSON.stringify(data));
+        ctxDispatch({ type: 'STAGE_2', payload: data });
+      } catch (err) {
+        toast.error(getError(err));
+      }
+    };
+    const fetchStage3 = async () => {
+      try {
+        const { data } = await Axios.get('/stages/stage3count');
+        localStorage.setItem('stage3', JSON.stringify(data));
+        ctxDispatch({ type: 'STAGE_3', payload: data });
+      } catch (err) {
+        toast.error(getError(err));
+      }
+    };
+    const fetchStage4 = async () => {
+      try {
+        const { data } = await Axios.get('/stages/stage4count');
+        localStorage.setItem('stage4', JSON.stringify(data));
+        ctxDispatch({ type: 'STAGE_4', payload: data });
+      } catch (err) {
+        toast.error(getError(err));
+      }
+    };
+    const fetchStage5 = async () => {
+      try {
+        const { data } = await Axios.get('/stages/stage5count');
+        localStorage.setItem('stage5', JSON.stringify(data));
+        ctxDispatch({ type: 'STAGE_5', payload: data });
+      } catch (err) {
+        toast.error(getError(err));
+      }
+    };
+    const fetchStage6 = async () => {
+      try {
+        const { data } = await Axios.get('/stages/stage6count');
+        localStorage.setItem('stage6', JSON.stringify(data));
+        ctxDispatch({ type: 'STAGE_6', payload: data });
+      } catch (err) {
+        toast.error(getError(err));
+      }
+    };
+    const fetchStage7 = async () => {
+      try {
+        const { data } = await Axios.get('/stages/stage7count');
+        localStorage.setItem('stage7', JSON.stringify(data));
+        ctxDispatch({ type: 'STAGE_7', payload: data });
+      } catch (err) {
+        toast.error(getError(err));
+      }
+    };
+    fetchStage1();
+    fetchStage2();
+    fetchStage3();
+    fetchStage4();
+    fetchStage5();
+    fetchStage6();
+    fetchStage7();
     fetchUsers();
   }, []);
 
-  console.log(userList);
+  const user =
+    stage === 1
+      ? stage1
+      : stage === 2
+      ? stage2
+      : stage === 3
+      ? stage3
+      : stage === 4
+      ? stage4
+      : stage === 5
+      ? stage5
+      : stage === 6
+      ? stage6
+      : stage === 7
+      ? stage7
+      : userList;
   return (
     <section className="admin-page">
       <header className="admin-header"> ADMIN </header>{' '}
@@ -111,15 +198,16 @@ export default function AdminScreen() {
             </tr>
           </thead>
           <tbody>
-            {userList.map((data, idx) => (
-              <tr key={idx + 1}>
-                <td> {idx + 1} </td>
-                <td> {data.name} </td>
-                <td> {data.rollno} </td>
-                <td> {data.email} </td>
-                <td> {data.createdAt.slice(11, 19)} </td>
-              </tr>
-            ))}
+            {user.length > 0 &&
+              user.map((data, idx) => (
+                <tr key={idx + 1}>
+                  <td> {idx + 1} </td>
+                  <td> {data.name} </td>
+                  <td> {data.rollno} </td>
+                  <td> {data.email} </td>
+                  <td> {data.createdAt.slice(11, 19)} </td>
+                </tr>
+              ))}
           </tbody>
         </table>{' '}
       </main>{' '}

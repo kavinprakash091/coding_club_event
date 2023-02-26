@@ -1,11 +1,15 @@
 .question-page {
-  height: 90vh;
   width: 100%;
+  margin-top: -2%;
+  background: url('../assets/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .question-header {
   width: 80%;
   padding-left: 3%;
+  padding-top: 2%;
   margin: 2% auto;
   font-size: 2rem;
   font-weight: 600;
@@ -20,6 +24,7 @@
 .question-description,
 .format,
 .sample-input {
+  background-color: #ffffff;
   width: 100%;
   padding: 1%;
   margin: 1% auto;
@@ -56,7 +61,6 @@
 .coding-image-container {
   width: 45%;
   height: 40vh;
-  background-color: red;
 }
 
 .coding-image-container > img {

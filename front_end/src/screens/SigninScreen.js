@@ -4,6 +4,7 @@ import Axios from 'axios';
 import { getError } from '../utils.js';
 import { Store } from '../Store.js';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 export default function SigninScreen() {
   const [rollno, setRollno] = useState('');
@@ -14,6 +15,8 @@ export default function SigninScreen() {
   const [section, setSection] = useState('');
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
+
+  const navigate = useNavigate();
 
   const registerHandler = async (e) => {
     e.preventDefault();
@@ -29,6 +32,7 @@ export default function SigninScreen() {
       ctxDispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
       toast.success(data.name + ' loggedin successfully!');
+      navigate('/guidelines');
     } catch (err) {
       toast.error(getError(err));
     }

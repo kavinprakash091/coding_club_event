@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { Store } from '../Store';
 import '../styles/Navbar.css';
 
 export default function Navbar() {
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { userInfo, isAdmin } = state;
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -33,10 +36,13 @@ export default function Navbar() {
           to="/guidelines
         "
         >
-          {' '}
           GUIDELINES{' '}
         </Link>{' '}
-        <Link to="/code"> CODE </Link>{' '}
+        {userInfo ? (
+          <Link to="/stage1"> CODE </Link>
+        ) : (
+          <Link to="/signin"> CODE </Link>
+        )}
         <Link
           to="/help
         "
@@ -46,12 +52,22 @@ export default function Navbar() {
         </Link>{' '}
       </div>{' '}
       <div className="profile">
-        <Link to="/signin">
-          LOGIN <i className="fa-solid fa-right-to-bracket"> </i>{' '}
-        </Link>{' '}
-        <Link to="/admin-signin">
-          ADMIN <i className="fa-solid fa-user-secret"> </i>{' '}
-        </Link>{' '}
+        {userInfo ? (
+          userInfo.name
+        ) : (
+          <Link to="/signin">
+            LOGIN <i className="fa-solid fa-right-to-bracket"> </i>{' '}
+          </Link>
+        )}
+        {isAdmin ? (
+          <Link to="/admin">
+            ADMIN <i className="fa-solid fa-user-secret"> </i>{' '}
+          </Link>
+        ) : (
+          <Link to="/admin-signin">
+            ADMIN <i className="fa-solid fa-user-secret"> </i>{' '}
+          </Link>
+        )}
       </div>{' '}
     </nav>
   );
