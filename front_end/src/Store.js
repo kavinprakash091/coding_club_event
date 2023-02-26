@@ -13,6 +13,9 @@ const initialState = {
   stages: localStorage.getItem('stages')
     ? JSON.parse(localStorage.getItem('stages'))
     : [],
+  isAdmin: localStorage.getItem('isAdmin')
+    ? localStorage.getItem('isAdmin')
+    : false,
 };
 
 const reducer = (state, action) => {
@@ -23,6 +26,8 @@ const reducer = (state, action) => {
       return { ...state, userList: action.payload };
     case 'STAGE':
       return { ...state, stages: action.payload };
+    case 'ADMIN':
+      return { ...state, isAdmin: action.payload };
     default:
       return state;
   }

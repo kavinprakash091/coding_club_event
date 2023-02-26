@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { Store } from '../Store';
 import '../styles/SigninScreen.css';
 
 export default function AdminSigninScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { isAdmin } = state;
+  const navigate = useNavigate();
+
   const submitHandler = (e) => {
     e.preventDefault();
-    alert(email + ' ' + password);
+    if (email === 'ccc.23cse@kongu.edu' && password === 'kongu@2022') {
+      localStorage.setItem('isAdmin', true);
+      ctxDispatch({ type: 'ADMIN', payload: true });
+      navigate('/admin');
+    } else {
+      toast.error('Invalid Credentials!');
+    }
   };
 
   return (

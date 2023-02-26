@@ -34,7 +34,7 @@ stageRouter.put(
     });
     const data = await user.save();
     res.send({
-      stage: data.stage,
+      stage: 1,
     });
     return;
   })
@@ -63,7 +63,7 @@ stageRouter.put(
     });
     const data = await user.save();
     res.send({
-      stage: data.stage,
+      stage: 2,
     });
     return;
   })
@@ -92,7 +92,7 @@ stageRouter.put(
     });
     const data = await user.save();
     res.send({
-      stage: data.stage,
+      stage: 3,
     });
     return;
   })
@@ -121,7 +121,7 @@ stageRouter.put(
     });
     const data = await user.save();
     res.send({
-      stage: data.stage,
+      stage: 4,
     });
     return;
   })
@@ -150,7 +150,7 @@ stageRouter.put(
     });
     const data = await user.save();
     res.send({
-      stage: data.stage,
+      stage: 5,
     });
     return;
   })
@@ -179,7 +179,7 @@ stageRouter.put(
     });
     const data = await user.save();
     res.send({
-      stage: data.stage,
+      stage: 6,
     });
     return;
   })
@@ -208,7 +208,7 @@ stageRouter.put(
     });
     const data = await user.save();
     res.send({
-      stage: data.stage,
+      stage: 7,
     });
     return;
   })

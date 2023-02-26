@@ -18,7 +18,7 @@ import { Store } from './Store';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { userInfo, stages } = state;
+  const { userInfo, stages, isAdmin } = state;
 
   return (
     <BrowserRouter>
@@ -32,7 +32,7 @@ function App() {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/guidelines" element={<GuidelinesScreen />} />
         <Route path="/admin-signin" element={<AdminSigninScreen />} />
-        <Route path="/admin" element={<AdminScreen />} />
+        {isAdmin && <Route path="/admin" element={<AdminScreen />} />}
         {userInfo && <Route path="/stage1" element={<Question1Screen />} />}
         {userInfo && stages.includes(1) && (
           <Route path="/stage2" element={<Question2Screen />} />
