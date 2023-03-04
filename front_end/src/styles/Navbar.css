@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #00a2ff;
   z-index: 0;
 }
 
@@ -38,7 +38,7 @@
   display: inline-block;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ff00ff;
+  color: #00a2ff;
   text-transform: uppercase;
   animation: flip 3s infinite;
   animation-delay: calc(0.2s * var(--i));
@@ -62,13 +62,13 @@ div.container {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #00a2ff;
   z-index: 0;
 }
 
 div.container a,
 .profile a {
-  color: #ffffff;
+  color: #00a2ff;
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: 700;

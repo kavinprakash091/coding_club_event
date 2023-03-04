@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import '../styles/QuestionScreen.css';
@@ -13,6 +13,9 @@ export default function Question1Screen() {
   const navigate = useNavigate();
 
   const [password, setPassword] = useState('');
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password === '12345') {
@@ -69,7 +72,7 @@ export default function Question1Screen() {
         </div>{' '}
         <div className="format">
           <h3> INPUT: - </h3> <p> Input contains two integers A and B. </p>{' '}
-          <h3> CONSTRAINTS: - </h3> <p> 0 & lt; A, B & lt; 10 ^ 15 </p>{' '}
+          <h3> CONSTRAINTS: - </h3> <p> 0 &lt; A, B &lt; 10 ^ 15 </p>{' '}
           <h3> OUTPUT: - </h3>{' '}
           <p>
             Print“ YunShu” if YunShu wins the game and“ Zhang” if Zhang wins the

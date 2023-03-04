@@ -14,6 +14,7 @@
   margin: 2% auto;
   font-size: 2rem;
   font-weight: 600;
+  font-family: Comic Sans MS;
   border-bottom: 2px solid #00a2ff;
 }
 
@@ -25,7 +26,6 @@
 .question-description,
 .format,
 .sample-input {
-  background-color: #ffffff;
   width: 100%;
   padding: 1%;
   margin: 1% auto;
@@ -33,8 +33,11 @@
   border-radius: 1rem;
   line-height: 1.5rem;
   font-size: 1rem;
-  box-shadow: #0091ff38 0px 0.0625em 0.0625em, #037afa5e 0px 0.125em 0.5em,
-    #ffffff1a 0px 0px 0px 1px inset;
+}
+
+.question-container p,
+.question-container h3 {
+  font-family: Comic Sans MS;
 }
 
 .stage-form-container {

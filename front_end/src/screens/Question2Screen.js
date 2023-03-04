@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import '../styles/QuestionScreen.css';
@@ -13,6 +13,9 @@ export default function Question1Screen() {
   const navigate = useNavigate();
 
   const [password, setPassword] = useState('');
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password === '12345') {

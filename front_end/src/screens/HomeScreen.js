@@ -9,7 +9,9 @@ export default function HomeScreen() {
       <div className="black-overlay"></div>
       <Navbar />
       <header className="cognizance">
-        <span>COGNIZANCE</span>
+        <div class="neon">
+          <h3>COGNIZANCE'23</h3>
+        </div>
       </header>
       <section className="club-container">
         <div class="words word-1">
