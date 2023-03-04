@@ -36,6 +36,7 @@ export default function Question1Screen() {
           navigate('/stage2');
         } else {
           navigate('/stage2');
+          // window.location.href = 'http://localhost:3000/stage2';
         }
       } catch (err) {
         toast.error(getError(err));

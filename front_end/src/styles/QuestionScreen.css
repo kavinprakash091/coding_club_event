@@ -1,4 +1,5 @@
 .question-page {
+  height: 200vh;
   width: 100%;
   margin-top: -2%;
   background: url('../assets/background.png');
@@ -34,18 +35,6 @@
   font-size: 1rem;
   box-shadow: #0091ff38 0px 0.0625em 0.0625em, #037afa5e 0px 0.125em 0.5em,
     #ffffff1a 0px 0px 0px 1px inset;
-}
-
-.coding-block {
-  height: 90vh;
-  width: 80%;
-  margin: 5% auto;
-}
-
-.coding-block iframe {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
 }
 
 .stage-form-container {
