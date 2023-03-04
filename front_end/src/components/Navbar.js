@@ -43,13 +43,6 @@ export default function Navbar() {
         ) : (
           <Link to="/signin"> CODE </Link>
         )}
-        <Link
-          to="/help
-        "
-        >
-          {' '}
-          HELP{' '}
-        </Link>{' '}
       </div>{' '}
       <div className="profile">
         {userInfo ? (

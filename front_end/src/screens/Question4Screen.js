@@ -110,9 +110,6 @@ export default function Question1Screen() {
           <img src={require('../assets/coding.gif')} alt="Coding" />
         </div>{' '}
       </section>{' '}
-      <section className="coding-block">
-        <iframe src="https://www.onlinegdb.com/" title="question4"></iframe>
-      </section>
       <section className="pagination-button-container">
         <Link to="/stage3" className="previous-button">
           <i className="fa-solid fa-angles-left left-arrow"> </i> Previous{' '}

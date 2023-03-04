@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AdminScreen from './screens/AdminScreen';
 import AdminSigninScreen from './screens/AdminSigninScreen';
+import FinishScreen from './screens/FinishScreen';
 import GuidelinesScreen from './screens/GuidelinesScreen';
 import HomeScreen from './screens/HomeScreen';
 import Question1Screen from './screens/Question1Screen';
@@ -51,6 +52,9 @@ function App() {
         )}
         {userInfo && stages.includes(6) && (
           <Route path="/stage7" element={<Question7Screen />} />
+        )}
+        {userInfo && stages.includes(7) && (
+          <Route path="/finish" element={<FinishScreen />} />
         )}
       </Routes>{' '}
     </BrowserRouter>
