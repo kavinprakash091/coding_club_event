@@ -5,7 +5,6 @@ const stage2chema = mongoose.Schema(
     rollno: { type: String, unique: true, required: true },
     name: { type: String, required: true },
     email: { type: String, unique: true, required: true },
-    department: { type: String, required: true, default: 2 },
   },
   {
     timestamps: true,

@@ -52,7 +52,7 @@ export default function GuidelinesScreen() {
             <Link
               to="/signin
             "
-              className="get - started - button "
+              className="get-started-button"
             >
               Tap to Code <i className="fa-solid fa-arrow-right arrows"> </i>{' '}
             </Link>

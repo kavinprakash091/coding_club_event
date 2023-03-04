@@ -88,6 +88,9 @@ export default function Question1Screen() {
           </p>{' '}
         </div>{' '}
       </main>{' '}
+      <section className="coding-block">
+        <iframe src="https://www.onlinegdb.com/" title="question1"></iframe>
+      </section>
       <section className="stage-form-container">
         <form className="stage-form" onSubmit={submitHandler}>
           <div className="input-field-tags">

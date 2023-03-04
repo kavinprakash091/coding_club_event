@@ -46,7 +46,7 @@ export default function Question1Screen() {
   };
   return (
     <section className="question-page">
-      <header className="question-header"> Question 1 </header>{' '}
+      <header className="question-header"> Question 4 </header>{' '}
       <main className="question-container">
         <div className="question-description">
           <p>
@@ -110,6 +110,9 @@ export default function Question1Screen() {
           <img src={require('../assets/coding.gif')} alt="Coding" />
         </div>{' '}
       </section>{' '}
+      <section className="coding-block">
+        <iframe src="https://www.onlinegdb.com/" title="question4"></iframe>
+      </section>
       <section className="pagination-button-container">
         <Link to="/stage3" className="previous-button">
           <i className="fa-solid fa-angles-left left-arrow"> </i> Previous{' '}

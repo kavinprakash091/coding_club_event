@@ -48,17 +48,17 @@ const reducer = (state, action) => {
     case 'STAGE_1':
       return { ...state, stage1: action.payload };
     case 'STAGE_2':
-      return { ...state, stage1: action.payload };
+      return { ...state, stage2: action.payload };
     case 'STAGE_3':
-      return { ...state, stage1: action.payload };
+      return { ...state, stage3: action.payload };
     case 'STAGE_4':
-      return { ...state, stage1: action.payload };
+      return { ...state, stage4: action.payload };
     case 'STAGE_5':
-      return { ...state, stage1: action.payload };
+      return { ...state, stage5: action.payload };
     case 'STAGE_6':
-      return { ...state, stage1: action.payload };
+      return { ...state, stage6: action.payload };
     case 'STAGE_7':
-      return { ...state, stage1: action.payload };
+      return { ...state, stage7: action.payload };
     case 'STAGE':
       return { ...state, stages: action.payload };
     case 'ADMIN':

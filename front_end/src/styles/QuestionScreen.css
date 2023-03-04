@@ -36,6 +36,18 @@
     #ffffff1a 0px 0px 0px 1px inset;
 }
 
+.coding-block {
+  height: 90vh;
+  width: 80%;
+  margin: 5% auto;
+}
+
+.coding-block iframe {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 .stage-form-container {
   width: 80%;
   margin: 3% auto;

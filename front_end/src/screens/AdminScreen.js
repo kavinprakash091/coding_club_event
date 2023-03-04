@@ -95,7 +95,7 @@ export default function AdminScreen() {
     fetchUsers();
   }, []);
 
-  const user =
+  const users =
     stage === 1
       ? stage1
       : stage === 2
@@ -192,25 +192,27 @@ export default function AdminScreen() {
         <table className="stage-table">
           <thead>
             <tr>
-              <th> S.No </th> <th> Name </th> <th> Roll No </th>
+              <th> S.No </th>
+              <th> Name </th>
+              <th> Roll No </th>
               <th> Email </th>
               <th> Time </th>
             </tr>
           </thead>
           <tbody>
-            {user.length > 0 &&
-              user.map((data, idx) => (
+            {users.length > 0 &&
+              users.map((data, idx) => (
                 <tr key={idx + 1}>
                   <td> {idx + 1} </td>
                   <td> {data.name} </td>
                   <td> {data.rollno} </td>
                   <td> {data.email} </td>
-                  <td> {data.createdAt.slice(11, 19)} </td>
+                  <td> {data.loginTime} </td>
                 </tr>
               ))}
           </tbody>
-        </table>{' '}
-      </main>{' '}
+        </table>
+      </main>
     </section>
   );
 }

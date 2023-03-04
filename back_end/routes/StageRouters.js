@@ -15,8 +15,24 @@ stageRouter.get(
   '/stage1count',
   expressAsyncHandler(async (req, res) => {
     const users = await Stage1.find({});
+    const arr = new Array();
+    users.forEach((ele) => {
+      const date =
+        ele._id.getTimestamp().getHours() +
+        ':' +
+        ele._id.getTimestamp().getMinutes() +
+        ':' +
+        ele._id.getTimestamp().getSeconds();
+      const user = {
+        rollno: ele.rollno,
+        name: ele.name,
+        email: ele.email,
+        loginTime: date,
+      };
+      arr.push(user);
+    });
     if (users) {
-      res.send(users);
+      res.send(arr);
       return;
     }
     res.status(404).send({ message: 'Users not found!' });
@@ -44,8 +60,24 @@ stageRouter.get(
   '/stage2count',
   expressAsyncHandler(async (req, res) => {
     const users = await Stage2.find({});
+    const arr = new Array();
+    users.forEach((ele) => {
+      const date =
+        ele._id.getTimestamp().getHours() +
+        ':' +
+        ele._id.getTimestamp().getMinutes() +
+        ':' +
+        ele._id.getTimestamp().getSeconds();
+      const user = {
+        rollno: ele.rollno,
+        name: ele.name,
+        email: ele.email,
+        loginTime: date,
+      };
+      arr.push(user);
+    });
     if (users) {
-      res.send(users);
+      res.send(arr);
       return;
     }
     res.status(404).send({ message: 'Users not found!' });
@@ -73,8 +105,24 @@ stageRouter.get(
   '/stage3count',
   expressAsyncHandler(async (req, res) => {
     const users = await Stage3.find({});
+    const arr = new Array();
+    users.forEach((ele) => {
+      const date =
+        ele._id.getTimestamp().getHours() +
+        ':' +
+        ele._id.getTimestamp().getMinutes() +
+        ':' +
+        ele._id.getTimestamp().getSeconds();
+      const user = {
+        rollno: ele.rollno,
+        name: ele.name,
+        email: ele.email,
+        loginTime: date,
+      };
+      arr.push(user);
+    });
     if (users) {
-      res.send(users);
+      res.send(arr);
       return;
     }
     res.status(404).send({ message: 'Users not found!' });
@@ -102,8 +150,24 @@ stageRouter.get(
   '/stage4count',
   expressAsyncHandler(async (req, res) => {
     const users = await Stage4.find({});
+    const arr = new Array();
+    users.forEach((ele) => {
+      const date =
+        ele._id.getTimestamp().getHours() +
+        ':' +
+        ele._id.getTimestamp().getMinutes() +
+        ':' +
+        ele._id.getTimestamp().getSeconds();
+      const user = {
+        rollno: ele.rollno,
+        name: ele.name,
+        email: ele.email,
+        loginTime: date,
+      };
+      arr.push(user);
+    });
     if (users) {
-      res.send(users);
+      res.send(arr);
       return;
     }
     res.status(404).send({ message: 'Users not found!' });
@@ -131,8 +195,24 @@ stageRouter.get(
   '/stage5count',
   expressAsyncHandler(async (req, res) => {
     const users = await Stage5.find({});
+    const arr = new Array();
+    users.forEach((ele) => {
+      const date =
+        ele._id.getTimestamp().getHours() +
+        ':' +
+        ele._id.getTimestamp().getMinutes() +
+        ':' +
+        ele._id.getTimestamp().getSeconds();
+      const user = {
+        rollno: ele.rollno,
+        name: ele.name,
+        email: ele.email,
+        loginTime: date,
+      };
+      arr.push(user);
+    });
     if (users) {
-      res.send(users);
+      res.send(arr);
       return;
     }
     res.status(404).send({ message: 'Users not found!' });
@@ -160,8 +240,24 @@ stageRouter.get(
   '/stage6count',
   expressAsyncHandler(async (req, res) => {
     const users = await Stage6.find({});
+    const arr = new Array();
+    users.forEach((ele) => {
+      const date =
+        ele._id.getTimestamp().getHours() +
+        ':' +
+        ele._id.getTimestamp().getMinutes() +
+        ':' +
+        ele._id.getTimestamp().getSeconds();
+      const user = {
+        rollno: ele.rollno,
+        name: ele.name,
+        email: ele.email,
+        loginTime: date,
+      };
+      arr.push(user);
+    });
     if (users) {
-      res.send(users);
+      res.send(arr);
       return;
     }
     res.status(404).send({ message: 'Users not found!' });
@@ -189,8 +285,24 @@ stageRouter.get(
   '/stage7count',
   expressAsyncHandler(async (req, res) => {
     const users = await Stage7.find({});
+    const arr = new Array();
+    users.forEach((ele) => {
+      const date =
+        ele._id.getTimestamp().getHours() +
+        ':' +
+        ele._id.getTimestamp().getMinutes() +
+        ':' +
+        ele._id.getTimestamp().getSeconds();
+      const user = {
+        rollno: ele.rollno,
+        name: ele.name,
+        email: ele.email,
+        loginTime: date,
+      };
+      arr.push(user);
+    });
     if (users) {
-      res.send(users);
+      res.send(arr);
       return;
     }
     res.status(404).send({ message: 'Users not found!' });

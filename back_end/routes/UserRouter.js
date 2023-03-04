@@ -9,8 +9,24 @@ userRouter.get(
   '/logincount',
   expressAsyncHandler(async (req, res) => {
     const users = await User.find({});
+    const arr = new Array();
+    users.forEach((ele) => {
+      const date =
+        ele._id.getTimestamp().getHours() +
+        ':' +
+        ele._id.getTimestamp().getMinutes() +
+        ':' +
+        ele._id.getTimestamp().getSeconds();
+      const user = {
+        rollno: ele.rollno,
+        name: ele.name,
+        email: ele.email,
+        loginTime: date,
+      };
+      arr.push(user);
+    });
     if (users) {
-      res.send(users);
+      res.send(arr);
       return;
     }
     res.status(404).send({ message: 'Users not found!' });
