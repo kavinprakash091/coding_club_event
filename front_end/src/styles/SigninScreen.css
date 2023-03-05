@@ -312,3 +312,33 @@
     );
   }
 }
+
+@media screen and (max-width: 450px) {
+  .sign-in-page {
+    height: 150vh;
+    width: 150%;
+    flex-direction: column-reverse;
+  }
+  .shape {
+    margin-top: 15rem;
+    margin-left: 10rem;
+  }
+  .register-form-container {
+    width: 70%;
+  }
+  .register-form {
+    margin-top: -40rem;
+    margin-left: 3rem;
+  }
+  .overlay {
+    margin-top: -45rem;
+    margin-left: -3rem;
+  }
+  .register-form select {
+    width: 19rem;
+  }
+  .register-button {
+    padding: 5% 10%;
+    font-size: 1.5rem;
+  }
+}

@@ -7,6 +7,14 @@
   background-size: cover;
 }
 
+.black-overlay1 {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  opacity: 0.8;
+}
+
 .guidelines {
   position: absolute;
   z-index: 0;
@@ -197,4 +205,27 @@
   background-size: 3rem;
   font-size: 1.5rem;
   line-height: 2.5rem;
+}
+
+@media screen and (max-width: 450px) {
+  .guidelines-container {
+    height: 150vh;
+  }
+  .black-overlay1 {
+    height: 150vh;
+  }
+  .loader {
+    width: 100%;
+    top: 5%;
+    left: 55%;
+  }
+  .loader h1 {
+    font-size: 2.5rem;
+  }
+  .guideline-points {
+    margin-top: 30%;
+  }
+  .guideline-points li {
+    padding-left: 20%;
+  }
 }

@@ -49,7 +49,6 @@
   width: 70%;
   margin: 3% auto;
   overflow: scroll;
-  overflow-x: hidden;
 }
 
 .stage-table {
@@ -63,4 +62,14 @@
   padding: 1% 2%;
   text-align: center;
   border: 1px solid #dbdbdb;
+}
+
+@media screen and (max-width: 450px) {
+  .stage-button-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stage-table th {
+    padding: 2% 4%;
+  }
 }

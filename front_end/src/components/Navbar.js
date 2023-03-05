@@ -10,12 +10,17 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <div className="menu-button">
-          <i className="fa-solid fa-bars"></i>
-        </div>
-        <div className="menu-button1">
-          <i className="fa-solid fa-xmark"></i>
-        </div>
+        {' '}
+        {!menuOpen ? (
+          <div className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+            <i className="fa-solid fa-bars"> </i>{' '}
+          </div>
+        ) : (
+          <div className="menu-button1" onClick={() => setMenuOpen(!menuOpen)}>
+            {' '}
+            <i className="fa-solid fa-xmark"> </i>{' '}
+          </div>
+        )}
         <div className="logo-container">
           <img src={require('../assets/ccc_logo.png')} alt="CCC" />
         </div>{' '}
@@ -37,11 +42,19 @@ export default function Navbar() {
           <div style={{ '--i': '15' }}> B </div>{' '}
         </div>{' '}
       </div>{' '}
-      <div className="container green borderXwidth">
+      <div
+        className={
+          menuOpen
+            ? menuOpen
+              ? 'container small-active-container green borderXwidth'
+              : 'container small-container green borderXwidth'
+            : 'container green borderXwidth'
+        }
+      >
         <Link to="/"> HOME </Link>{' '}
         <Link
           to="/guidelines
-        "
+            "
         >
           GUIDELINES{' '}
         </Link>{' '}
@@ -49,16 +62,17 @@ export default function Navbar() {
           <Link to="/stage1"> CODE </Link>
         ) : (
           <Link to="/signin"> CODE </Link>
-        )}
+        )}{' '}
       </div>{' '}
       <div className="profile">
+        {' '}
         {userInfo ? (
           userInfo.name
         ) : (
           <Link to="/signin">
             LOGIN <i className="fa-solid fa-right-to-bracket"> </i>{' '}
           </Link>
-        )}
+        )}{' '}
         {isAdmin ? (
           <Link to="/admin">
             ADMIN <i className="fa-solid fa-user-secret"> </i>{' '}
@@ -67,7 +81,7 @@ export default function Navbar() {
           <Link to="/admin-signin">
             ADMIN <i className="fa-solid fa-user-secret"> </i>{' '}
           </Link>
-        )}
+        )}{' '}
       </div>{' '}
     </nav>
   );

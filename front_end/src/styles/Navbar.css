@@ -57,6 +57,19 @@ div.container {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
+}
+
+div.small-active-container {
+  width: 25%;
+  padding: 5%;
+  margin-top: 35%;
+  position: fixed;
+  flex-direction: column;
+  z-index: 5;
+  gap: 1.5rem;
+  justify-content: start;
+  background-color: #000000a3;
 }
 
 .profile {
@@ -127,23 +140,19 @@ div.borderXwidth a:hover:after,
 .menu-button {
   width: 1rem;
   color: #fff;
+  left: 1rem;
   font-size: 1.5rem;
   float: right;
   cursor: pointer;
-  display: none;
 }
 
 .menu-button1 {
   width: 1rem;
   color: #fff;
+  left: 1rem;
   font-size: 1.5rem;
   float: right;
   cursor: pointer;
-  display: none;
-}
-
-#isChecked {
-  display: none;
 }
 
 @media screen and (max-width: 1050px) {
@@ -176,18 +185,6 @@ div.borderXwidth a:hover:after,
 }
 
 @media screen and (max-width: 800px) {
-  div.container {
-    width: 25%;
-    padding: 5%;
-    margin-top: 35%;
-    position: fixed;
-    flex-direction: column;
-    z-index: 5;
-    gap: 1.5rem;
-    margin-left: -50%;
-    justify-content: start;
-    background-color: #000000a3;
-  }
   .navbar-brand {
     width: 50%;
   }
@@ -200,6 +197,13 @@ div.borderXwidth a:hover:after,
 }
 
 @media screen and (max-width: 450px) {
+  .navbar {
+    width: 90%;
+    padding: 5%;
+  }
+  .logo-container {
+    display: none;
+  }
   .waviy {
     display: none;
   }

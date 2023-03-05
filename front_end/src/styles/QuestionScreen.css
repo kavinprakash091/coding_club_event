@@ -1,5 +1,5 @@
 .question-page {
-  height: 200vh;
+  height: auto;
   width: 100%;
   margin-top: -2%;
   background: url('../assets/background.png');
@@ -130,5 +130,31 @@
   }
   20% {
     transform: translateX(10px);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .stage-form-container {
+    flex-direction: column-reverse;
+  }
+  .coding-image-container {
+    height: 20vh;
+    width: 100%;
+    margin-top: 5%;
+  }
+  .stage-form {
+    margin-top: 5%;
+    width: 100%;
+  }
+  .input-fields {
+    width: 19rem;
+  }
+  .pagination-button-container {
+    margin: 20% auto;
+  }
+  .previous-button,
+  .next-button,
+  .continue-button {
+    padding: 3% 5%;
   }
 }

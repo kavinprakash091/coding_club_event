@@ -278,3 +278,19 @@
     color: #f16a6a;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .wrapper.eight {
+    font-size: 2rem;
+    padding-top: 10%;
+  }
+  .drop-main {
+    margin-top: -30%;
+    font-size: 2rem;
+  }
+  .go-to-home-button {
+    padding: 3% 5%;
+    margin-top: 15%;
+    font-size: 1.8rem;
+  }
+}

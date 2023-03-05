@@ -8,7 +8,7 @@ export default function GuidelinesScreen() {
   const { userInfo } = state;
   return (
     <section className="guidelines-container">
-      <div className="black-overlay"> </div>{' '}
+      <div className="black-overlay1"> </div>{' '}
       <div class="bubble bubble--1"> </div>{' '}
       <div class="bubble bubble--2"> </div>{' '}
       <div class="bubble bubble--3"> </div>{' '}
