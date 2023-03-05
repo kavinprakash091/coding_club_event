@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Store } from '../Store';
 import '../styles/Navbar.css';
@@ -6,9 +6,16 @@ import '../styles/Navbar.css';
 export default function Navbar() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo, isAdmin } = state;
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav className="navbar">
       <div className="navbar-brand">
+        <div className="menu-button">
+          <i className="fa-solid fa-bars"></i>
+        </div>
+        <div className="menu-button1">
+          <i className="fa-solid fa-xmark"></i>
+        </div>
         <div className="logo-container">
           <img src={require('../assets/ccc_logo.png')} alt="CCC" />
         </div>{' '}
