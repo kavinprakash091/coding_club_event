@@ -10,17 +10,6 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        {' '}
-        {!menuOpen ? (
-          <div className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
-            <i className="fa-solid fa-bars"> </i>{' '}
-          </div>
-        ) : (
-          <div className="menu-button1" onClick={() => setMenuOpen(!menuOpen)}>
-            {' '}
-            <i className="fa-solid fa-xmark"> </i>{' '}
-          </div>
-        )}
         <div className="logo-container">
           <img src={require('../assets/ccc_logo.png')} alt="CCC" />
         </div>{' '}

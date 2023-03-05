@@ -10,9 +10,9 @@ export default function SigninScreen() {
   const [rollno, setRollno] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [department, setDepartment] = useState('');
-  const [year, setYear] = useState('');
-  const [section, setSection] = useState('');
+  const [department, setDepartment] = useState('Civil Engineering');
+  const [year, setYear] = useState('2');
+  const [section, setSection] = useState('A');
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
 
