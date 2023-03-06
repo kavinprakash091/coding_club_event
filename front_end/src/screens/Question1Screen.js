@@ -80,7 +80,7 @@ export default function Question1Screen() {
           </div>
         </div>
       )}
-      <header className="question-header"> Question 1 </header>{' '}
+      <header className="question-header"> Stage 1 </header>{' '}
       <main className="question-container">
         <div className="question-description">
           <p>

@@ -8,9 +8,7 @@ import core from 'cors';
 dotenv.config();
 
 mongoose
-  .connect(
-    'mongodb+srv://CCC:CCC@cluster0.7qb75ae.mongodb.net/7zcoders?retryWrites=true&w=majority'
-  )
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     console.log('Connected to db');
   })

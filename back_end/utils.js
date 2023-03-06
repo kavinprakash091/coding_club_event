@@ -12,7 +12,7 @@ export const generateToken = (user) => {
       section: user.section,
       isAdmin: user.isAdmin,
     },
-    'something secret',
+    JWT_SECRET,
     {
       expiresIn: '30d',
     }
@@ -23,7 +23,7 @@ export const isAuth = (req, res, next) => {
   const authorization = req.headers.authorization;
   if (authorization) {
     const token = authorization.slice(7, authorization.length);
-    jwt.verify(token, 'something secret', (err, decode) => {
+    jwt.verify(token, JWT_SECRET, (err, decode) => {
       if (err) {
         res.status(404).send({ message: 'Invalid Token' });
       } else {

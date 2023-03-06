@@ -41,7 +41,15 @@ userRouter.put(
       rollno: req.body.rollno,
     });
     if (users) {
-      res.status(404).send({ message: 'Already registered!' });
+      res.send({
+        rollno: users.rollno,
+        name: users.name,
+        email: users.email,
+        department: users.department,
+        year: users.year,
+        section: users.section,
+        token: generateToken(users),
+      });
       return;
     }
     const user = new User({
