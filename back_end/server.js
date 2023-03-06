@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRouter from './routes/UserRouter.js';
 import stageRouter from './routes/StageRouters.js';
-
+import path from 'path';
+import core from 'cors';
 dotenv.config();
 
 mongoose
@@ -17,6 +18,8 @@ mongoose
 
 const app = express();
 
+app.use(core());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -25,6 +28,12 @@ app.use('/stages', stageRouter);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
+});
+
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, './front_end/build')));
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, './front_end/build/index.html'));
 });
 
 const port = process.env.PORT || 5000;

@@ -1,0 +1,21 @@
+{
+  "name": "coding-club",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd front_end && npm install && npm run build",
+    "start": "node back_end/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavinprakash091/coding_club_event.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kavinprakash091/coding_club_event/issues"
+  },
+  "homepage": "https://github.com/kavinprakash091/coding_club_event#readme"
+}
