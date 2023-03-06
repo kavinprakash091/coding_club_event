@@ -16,6 +16,7 @@ import Question6Screen from './screens/Question6Screen';
 import Question7Screen from './screens/Question7Screen';
 import SigninScreen from './screens/SigninScreen';
 import { Store } from './Store';
+import { Helmet } from 'react-helmet-async';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -23,16 +24,23 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Helmet>
+        <title>7zcoders</title>
+        <link rel="icon" href={require('../src/assets/ccc_logo.png')} />
+      </Helmet>
       <ToastContainer
         position="top-right"
         style={{ marginTop: '1%' }}
         limit={1}
       />
       <Routes>
-        <Route path="/signin" element={<SigninScreen />} />
+        {!userInfo && <Route path="/signin" element={<SigninScreen />} />}
+
         <Route path="/" element={<HomeScreen />} />
         <Route path="/guidelines" element={<GuidelinesScreen />} />
-        <Route path="/admin-signin" element={<AdminSigninScreen />} />
+        {!isAdmin && (
+          <Route path="/admin-signin" element={<AdminSigninScreen />} />
+        )}
         {isAdmin && <Route path="/admin" element={<AdminScreen />} />}
         {userInfo && <Route path="/stage1" element={<Question1Screen />} />}
         {userInfo && stages.includes(1) && (

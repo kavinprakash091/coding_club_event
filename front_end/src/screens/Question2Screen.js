@@ -1,14 +1,28 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import '../styles/QuestionScreen.css';
 import { getError } from '../utils';
 import Axios from 'axios';
 import { Store } from '../Store';
+import ReactLoading from 'react-loading';
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'FETCH_REQUEST':
+      return { ...state, loading: true };
+    case 'FETCH_SUCCESS':
+      return { ...state, loading: false };
+    case 'FETCH_FAILED':
+      return { ...state, loading: false };
+  }
+};
 
 export default function Question1Screen() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo, stages } = state;
+
+  const [{ loading }, dispatch] = useReducer(reducer, { loading: false });
 
   const navigate = useNavigate();
 
@@ -24,6 +38,7 @@ export default function Question1Screen() {
           const rollno = userInfo.rollno;
           const name = userInfo.name;
           const email = userInfo.email;
+          dispatch({ type: 'FETCH_REQUEST' });
           const { data } = await Axios.put(
             '/stages/stage2',
             {
@@ -36,11 +51,13 @@ export default function Question1Screen() {
           stages.push(data.stage);
           ctxDispatch({ type: 'STAGE', payload: stages });
           localStorage.setItem('stages', JSON.stringify(stages));
+          dispatch({ type: 'FETCH_SUCCESS' });
           navigate('/stage3');
         } else {
           navigate('/stage3');
         }
       } catch (err) {
+        dispatch({ type: 'FETCH_FAILED' });
         toast.error(getError(err));
       }
     } else {
@@ -49,6 +66,18 @@ export default function Question1Screen() {
   };
   return (
     <section className="question-page">
+      {loading && (
+        <div className="overlay1">
+          <div className="loading-box">
+            <ReactLoading
+              type="spinningBubbles"
+              color="#00a2ff"
+              height={'10%'}
+              width={'10%'}
+            />
+          </div>
+        </div>
+      )}
       <header className="question-header"> Question 2 </header>{' '}
       <main className="question-container">
         <div className="question-description">
