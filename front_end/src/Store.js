@@ -25,12 +25,6 @@ const initialState = {
   stage5: localStorage.getItem('stage5')
     ? JSON.parse(localStorage.getItem('stage5'))
     : [],
-  stage6: localStorage.getItem('stage6')
-    ? JSON.parse(localStorage.getItem('stage6'))
-    : [],
-  stage7: localStorage.getItem('stage7')
-    ? JSON.parse(localStorage.getItem('stage7'))
-    : [],
   stages: localStorage.getItem('stages')
     ? JSON.parse(localStorage.getItem('stages'))
     : [],
@@ -55,10 +49,7 @@ const reducer = (state, action) => {
       return { ...state, stage4: action.payload };
     case 'STAGE_5':
       return { ...state, stage5: action.payload };
-    case 'STAGE_6':
-      return { ...state, stage6: action.payload };
-    case 'STAGE_7':
-      return { ...state, stage7: action.payload };
+
     case 'STAGE':
       return { ...state, stages: action.payload };
     case 'ADMIN':

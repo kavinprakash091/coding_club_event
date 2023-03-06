@@ -21,8 +21,7 @@ export default function AdminScreen() {
   const [stage, setStage] = useState(0);
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { userList, stage1, stage2, stage3, stage4, stage5, stage6, stage7 } =
-    state;
+  const { userList, stage1, stage2, stage3, stage4, stage5 } = state;
 
   const [{ loading }, dispatch] = useReducer(reducer, { loading: false });
 
@@ -99,38 +98,12 @@ export default function AdminScreen() {
         toast.error(getError(err));
       }
     };
-    const fetchStage6 = async () => {
-      try {
-        dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await Axios.get('/stages/stage6count');
-        localStorage.setItem('stage6', JSON.stringify(data));
-        ctxDispatch({ type: 'STAGE_6', payload: data });
-        dispatch({ type: 'FETCH_SUCCESS' });
-      } catch (err) {
-        dispatch({ type: 'FETCH_FAILED' });
-        toast.error(getError(err));
-      }
-    };
-    const fetchStage7 = async () => {
-      try {
-        dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await Axios.get('/stages/stage7count');
-        localStorage.setItem('stage7', JSON.stringify(data));
-        ctxDispatch({ type: 'STAGE_7', payload: data });
-        dispatch({ type: 'FETCH_SUCCESS' });
-      } catch (err) {
-        dispatch({ type: 'FETCH_FAILED' });
-        toast.error(getError(err));
-      }
-    };
 
     fetchStage1();
     fetchStage2();
     fetchStage3();
     fetchStage4();
     fetchStage5();
-    fetchStage6();
-    fetchStage7();
     fetchUsers();
   }, []);
 
@@ -145,10 +118,6 @@ export default function AdminScreen() {
       ? stage4
       : stage === 5
       ? stage5
-      : stage === 6
-      ? stage6
-      : stage === 7
-      ? stage7
       : userList;
   return (
     <section className="admin-page">
@@ -230,28 +199,6 @@ export default function AdminScreen() {
           >
             {' '}
             Stage 5{' '}
-          </button>{' '}
-          <button
-            className={
-              stage === 6
-                ? 'stage-button btn6 stage-active'
-                : 'stage-button btn6'
-            }
-            onClick={() => setStage(6)}
-          >
-            {' '}
-            Stage 6{' '}
-          </button>{' '}
-          <button
-            className={
-              stage === 7
-                ? 'stage-button btn7 stage-active'
-                : 'stage-button btn7'
-            }
-            onClick={() => setStage(7)}
-          >
-            {' '}
-            Stage 7{' '}
           </button>{' '}
         </section>
       )}

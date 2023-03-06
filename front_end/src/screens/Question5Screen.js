@@ -52,9 +52,9 @@ export default function Question1Screen() {
           ctxDispatch({ type: 'STAGE', payload: stages });
           localStorage.setItem('stages', JSON.stringify(stages));
           dispatch({ type: 'FETCH_SUCCESS' });
-          navigate('/stage6');
+          navigate('/finish');
         } else {
-          navigate('/stage6');
+          navigate('/finish');
         }
       } catch (err) {
         dispatch({ type: 'FETCH_FAILED' });
@@ -78,48 +78,72 @@ export default function Question1Screen() {
           </div>
         </div>
       )}
-      <header className="question-header"> Question 5 </header>{' '}
+      <header className="question-header"> Stage 5 </header>{' '}
       <main className="question-container">
         <div className="question-description">
           <p>
-            There was a Mysterious World in which People always try to collect
-            as many possible gem stones for their energy and good life.Two
-            friends are seventeen years old named one is YunShu and another one
-            is Zhang.One day, YunShu found that Zhang has many hidden gem
-            stones.YunShu wanted to own every hidden gem stones but robbery was
-            strictly restricted.So, he trickily created a game.But he doesn’ t
-            know the result yet he tried and invites Zhang to play with him.The
-            game was: Firstly, Yunshu has A number of gem stones and Zhang has B
-            number of gem stones.In the first Move, Zhang has to give YunShu 1
-            gemStone.In second move, YunShu has to give Zhang 2 gem stones.In
-            third move, Zhang has to give YunShu 3 gem stones.In Fourth move,
-            YunShu has to give Zhang 4 gem stones and the game continues till
-            one of them cannot make a move.The one who can’ t make a move loses
-            and had to all the gem stones he collected.Your task is to find who
-            own all the Hidden gem stone and is the password.{' '}
+            Raju,a student weak in maths is doing his maths homework.His
+            homework is to write the alphabet series upto n terms.While doing
+            his father called him.He went and after sometime he starts resuming
+            his work.But atlast,he found that he had missed a number within the
+            range. Help him to find the missing number. The secret key for the
+            next stage is camel case words of the result.
+            <br />
+            <strong>Note:-</strong>
+            <span>Don't consider white spaces in secret key.</span>
           </p>{' '}
         </div>{' '}
         <div className="format">
-          <h3> INPUT: - </h3> <p> Input contains two integers A and B. </p>{' '}
-          <h3> CONSTRAINTS: - </h3> <p> 0 &lt; A, B &lt; 10 ^ 15 </p>{' '}
-          <h3> OUTPUT: - </h3>{' '}
+          <h3> INPUT: - </h3>{' '}
           <p>
-            Print“ YunShu” if YunShu wins the game and“ Zhang” if Zhang wins the
-            game.{' '}
-          </p>{' '}
-        </div>{' '}
+            First line contains the number of elements in the series.
+            <br />
+            Second line contains the N integers of space separated.
+          </p>
+          <br />
+          <h3> CONSTRAINTS: - </h3>{' '}
+          <p>
+            {' '}
+            0 &lt; N &lt; 10 ^ 5 <br />0 &lt; A[i] &lt; 10^10{' '}
+          </p>
+          <br />
+          <h3> OUTPUT: - </h3> <p>Print the missing number.</p>{' '}
+        </div>
+        <br />
         <div className="sample-input">
-          <h3> SAMPLE INPUT: - </h3> <p> 2 1 </p> <h3> SAMPLE OUTPUT: - </h3>{' '}
-          <p> YunShu </p> <h3> EXPLANATION: - </h3>{' '}
+          <h3> SAMPLE INPUT 1: - </h3>{' '}
           <p>
-            In first move Zhang gives 1 gem to YunShu so, YunShu has 3 gems and
-            Zhang has 0 gem.In second move YunShu gives 2 gems to Zhang so,
-            YunShu has 1 gem and Zhang has 2 gems.In third move Zhang need to
-            give 3 gems to YunShu but Zhang has only 2 gems now, he cannot able
-            to make his move so, Zhang loses the game.{' '}
-          </p>{' '}
+            {' '}
+            5 <br />5 10 7 6 9{' '}
+          </p>
+          <br />
+          <h3> SAMPLE OUTPUT 1: - </h3> <p> 8 </p>
+          <br /> <h3> EXPLANATION 1: - </h3>{' '}
+          <p>The missed value in the series is 8.</p>{' '}
+        </div>
+        <br />
+        <div className="sample-input">
+          <h3> SAMPLE INPUT 2: - </h3> <p>7 2 3 5 4 8 7 9</p>
+          <br />
+          <h3> SAMPLE OUTPUT 2: - </h3> <p> 6 </p>
+          <br /> <h3> EXPLANATION 2: - </h3>{' '}
+          <p>The missed value in the series is 6.</p>
         </div>{' '}
-      </main>{' '}
+      </main>
+      <div className="gift-container">
+        <div className="box">
+          <div className="box-body">
+            <div className="input-container">
+              3
+              <br />
+              9998 10000 10001
+            </div>
+            <div className="box-lid">
+              <div className="box-bowtie"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <section className="stage-form-container">
         <form className="stage-form" onSubmit={submitHandler}>
           <div className="input-field-tags">
@@ -147,7 +171,7 @@ export default function Question1Screen() {
           <i className="fa-solid fa-angles-left left-arrow"> </i> Previous{' '}
         </Link>{' '}
         {stages.includes(5) && (
-          <Link to="/stage6" className="next-button">
+          <Link to="/finish" className="next-button">
             Next <i className="fa-solid fa-angles-right right-arrow"> </i>{' '}
           </Link>
         )}

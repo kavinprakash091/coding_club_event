@@ -34,7 +34,7 @@ export default function Question1Screen() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    if (password === '12345') {
+    if (password === 'ZERO') {
       try {
         if (!stages.includes(1)) {
           const rollno = userInfo.rollno;
@@ -84,44 +84,78 @@ export default function Question1Screen() {
       <main className="question-container">
         <div className="question-description">
           <p>
-            There was a Mysterious World in which People always try to collect
-            as many possible gem stones for their energy and good life.Two
-            friends are seventeen years old named one is YunShu and another one
-            is Zhang.One day, YunShu found that Zhang has many hidden gem
-            stones.YunShu wanted to own every hidden gem stones but robbery was
-            strictly restricted.So, he trickily created a game.But he doesn’ t
-            know the result yet he tried and invites Zhang to play with him.The
-            game was: Firstly, Yunshu has A number of gem stones and Zhang has B
-            number of gem stones.In the first Move, Zhang has to give YunShu 1
-            gemStone.In second move, YunShu has to give Zhang 2 gem stones.In
-            third move, Zhang has to give YunShu 3 gem stones.In Fourth move,
-            YunShu has to give Zhang 4 gem stones and the game continues till
-            one of them cannot make a move.The one who can’ t make a move loses
-            and had to all the gem stones he collected.Your task is to find who
-            own all the Hidden gem stone and is the password.{' '}
+            Pranesh is a UG Scholar. He is given with problem where he has to
+            find the number of characters in a string equivalent to the given
+            ASCII value. The secret key for the next stage is higher case of the
+            result.
           </p>{' '}
         </div>{' '}
         <div className="format">
-          <h3> INPUT: - </h3> <p> Input contains two integers A and B. </p>{' '}
-          <h3> CONSTRAINTS: - </h3> <p> 0 &lt; A, B &lt; 10 ^ 15 </p>{' '}
+          <h3> INPUT: - </h3>{' '}
+          <p>
+            First line contains the string S.
+            <br />
+            Second line contains an integer N.
+          </p>
+          <br />
+          <h3> CONSTRAINTS: - </h3>{' '}
+          <p>
+            {' '}
+            0 &lt; strlen(S) &lt; 10 ^ 5 <br />0 &lt; N &lt; 10^10{' '}
+          </p>
+          <br />
           <h3> OUTPUT: - </h3>{' '}
           <p>
-            Print“ YunShu” if YunShu wins the game and“ Zhang” if Zhang wins the
-            game.{' '}
+            Print the number of characters which is equal to the target ASCII.
           </p>{' '}
-        </div>{' '}
+        </div>
+        <br />
         <div className="sample-input">
-          <h3> SAMPLE INPUT: - </h3> <p> 2 1 </p> <h3> SAMPLE OUTPUT: - </h3>{' '}
-          <p> YunShu </p> <h3> EXPLANATION: - </h3>{' '}
+          <h3> SAMPLE INPUT 1: - </h3>{' '}
           <p>
-            In first move Zhang gives 1 gem to YunShu so, YunShu has 3 gems and
-            Zhang has 0 gem.In second move YunShu gives 2 gems to Zhang so,
-            YunShu has 1 gem and Zhang has 2 gems.In third move Zhang need to
-            give 3 gems to YunShu but Zhang has only 2 gems now, he cannot able
-            to make his move so, Zhang loses the game.{' '}
+            {' '}
+            cse coding club <br />
+            99{' '}
+          </p>
+          <br />
+          <h3> SAMPLE OUTPUT 1: - </h3> <p> 3 </p>
+          <br /> <h3> EXPLANATION 1: - </h3>{' '}
+          <p>
+            ASCII value of character 'c' is 99. There are 3 characters 'c' in
+            the given string.
+          </p>{' '}
+        </div>
+        <br />
+        <div className="sample-input">
+          <h3> SAMPLE INPUT 2: - </h3>{' '}
+          <p>
+            {' '}
+            happy learning <br />
+            113{' '}
+          </p>
+          <br />
+          <h3> SAMPLE OUTPUT 2: - </h3> <p> 2 </p>
+          <br /> <h3> EXPLANATION 2: - </h3>{' '}
+          <p>
+            ASCII value of character 'p' is 113. There are 3 characters 'p' in
+            the given string.
           </p>{' '}
         </div>{' '}
-      </main>{' '}
+      </main>
+      <div className="gift-container">
+        <div className="box">
+          <div className="box-body">
+            <div className="input-container">
+              cognizance
+              <br />
+              98
+            </div>
+            <div className="box-lid">
+              <div className="box-bowtie"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <section className="stage-form-container">
         <form className="stage-form" onSubmit={submitHandler}>
           <div className="input-field-tags">

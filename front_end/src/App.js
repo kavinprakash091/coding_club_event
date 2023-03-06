@@ -12,8 +12,6 @@ import Question2Screen from './screens/Question2Screen';
 import Question3Screen from './screens/Question3Screen';
 import Question4Screen from './screens/Question4Screen';
 import Question5Screen from './screens/Question5Screen';
-import Question6Screen from './screens/Question6Screen';
-import Question7Screen from './screens/Question7Screen';
 import SigninScreen from './screens/SigninScreen';
 import { Store } from './Store';
 import { Helmet } from 'react-helmet-async';
@@ -56,12 +54,6 @@ function App() {
           <Route path="/stage5" element={<Question5Screen />} />
         )}
         {userInfo && stages.includes(5) && (
-          <Route path="/stage6" element={<Question6Screen />} />
-        )}
-        {userInfo && stages.includes(6) && (
-          <Route path="/stage7" element={<Question7Screen />} />
-        )}
-        {userInfo && stages.includes(7) && (
           <Route path="/finish" element={<FinishScreen />} />
         )}
       </Routes>{' '}
