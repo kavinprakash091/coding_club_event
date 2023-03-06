@@ -33,9 +33,9 @@ app.use((err, req, res, next) => {
 });
 
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, './front_end/build')));
+app.use(express.static(path.join(__dirname, '../front_end/build')));
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, './front_end/build/index.html'));
+  res.sendFile(path.join(__dirname, '../front_end/build/index.html'));
 });
 
 const port = process.env.PORT || 5000;
