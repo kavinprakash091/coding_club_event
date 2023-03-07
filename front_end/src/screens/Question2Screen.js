@@ -104,7 +104,7 @@ export default function Question1Screen() {
           <h3> CONSTRAINTS: - </h3>{' '}
           <p>
             {' '}
-            0 &lt; N &lt; 10 ^ 5 <br />0 &lt; A[i] &lt; 10^10{' '}
+            0 &lt; N &lt; 10<sup>5</sup> <br />0 &lt; A[i] &lt; 10<sup>10</sup>{' '}
           </p>
           <br />
           <h3> OUTPUT: - </h3> <p>Print the missing number.</p>{' '}

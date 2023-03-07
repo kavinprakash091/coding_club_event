@@ -32,7 +32,7 @@ export default function Question1Screen() {
   }, []);
   const submitHandler = async (e) => {
     e.preventDefault();
-    if (password === '12345') {
+    if (password === '1 1 1 2 0 1 2 0 5 0') {
       try {
         if (!stages.includes(5)) {
           const rollno = userInfo.rollno;
@@ -82,62 +82,44 @@ export default function Question1Screen() {
       <main className="question-container">
         <div className="question-description">
           <p>
-            Raju,a student weak in maths is doing his maths homework.His
-            homework is to write the alphabet series upto n terms.While doing
-            his father called him.He went and after sometime he starts resuming
-            his work.But atlast,he found that he had missed a number within the
-            range. Help him to find the missing number. The secret key for the
-            next stage is camel case words of the result.
-            <br />
-            <strong>Note:-</strong>
-            <span>Don't consider white spaces in secret key.</span>
+            Bob the robber is trying to rob a bank, The Vault is highly secured
+            and ecoded, however Bob outsmarted the security and reached the
+            final security section. The pin for opening the vault is encoded, so
+            help Bob to decode the pin and open the vault. The secret key for
+            the next stage is result.
           </p>{' '}
         </div>{' '}
         <div className="format">
           <h3> INPUT: - </h3>{' '}
           <p>
-            First line contains the number of elements in the series.
-            <br />
-            Second line contains the N integers of space separated.
+            The input consists of a string mixed with numbers and alphabets.
           </p>
           <br />
           <h3> CONSTRAINTS: - </h3>{' '}
           <p>
             {' '}
-            0 &lt; N &lt; 10 ^ 5 <br />0 &lt; A[i] &lt; 10^10{' '}
+            0 &lt; strlen(S) &lt; 10<sup>5</sup>
           </p>
           <br />
-          <h3> OUTPUT: - </h3> <p>Print the missing number.</p>{' '}
+          <h3> OUTPUT: - </h3> <p>Print the decoded pin.</p>{' '}
         </div>
         <br />
         <div className="sample-input">
-          <h3> SAMPLE INPUT 1: - </h3>{' '}
-          <p>
-            {' '}
-            5 <br />5 10 7 6 9{' '}
-          </p>
+          <h3> SAMPLE INPUT 1: - </h3> <p>a11472o5t6</p>
           <br />
-          <h3> SAMPLE OUTPUT 1: - </h3> <p> 8 </p>
-          <br /> <h3> EXPLANATION 1: - </h3>{' '}
-          <p>The missed value in the series is 8.</p>{' '}
+          <h3> SAMPLE OUTPUT 1: - </h3> <p> 0 2 1 0 1 1 1 1 0 0 </p>
         </div>
         <br />
         <div className="sample-input">
-          <h3> SAMPLE INPUT 2: - </h3> <p>7 2 3 5 4 8 7 9</p>
+          <h3> SAMPLE INPUT 2: - </h3> <p>lw4n88j12n1</p>
           <br />
-          <h3> SAMPLE OUTPUT 2: - </h3> <p> 6 </p>
-          <br /> <h3> EXPLANATION 2: - </h3>{' '}
-          <p>The missed value in the series is 6.</p>
+          <h3> SAMPLE OUTPUT 2: - </h3> <p> 0 2 1 0 1 0 0 0 2 0 </p>
         </div>{' '}
       </main>
       <div className="gift-container">
         <div className="box">
           <div className="box-body">
-            <div className="input-container">
-              3
-              <br />
-              9998 10000 10001
-            </div>
+            <div className="input-container">1v88886l256338ar0ekk</div>
             <div className="box-lid">
               <div className="box-bowtie"></div>
             </div>

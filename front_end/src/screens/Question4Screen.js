@@ -32,7 +32,7 @@ export default function Question1Screen() {
   }, []);
   const submitHandler = async (e) => {
     e.preventDefault();
-    if (password === '12345') {
+    if (password === 'pInK') {
       try {
         if (!stages.includes(4)) {
           const rollno = userInfo.rollno;
@@ -82,61 +82,57 @@ export default function Question1Screen() {
       <main className="question-container">
         <div className="question-description">
           <p>
-            Raju,a student weak in maths is doing his maths homework.His
-            homework is to write the alphabet series upto n terms.While doing
-            his father called him.He went and after sometime he starts resuming
-            his work.But atlast,he found that he had missed a number within the
-            range. Help him to find the missing number. The secret key for the
-            next stage is camel case words of the result.
+            A toddler named Shawan, who wants to study colors so badly since it
+            attracted them. Teach him a few colors that come to your mind. The
+            secret key for the next stage is alternate case words of the result
+            and start with lowercase.
             <br />
-            <strong>Note:-</strong>
-            <span>Don't consider white spaces in secret key.</span>
           </p>{' '}
         </div>{' '}
         <div className="format">
           <h3> INPUT: - </h3>{' '}
           <p>
-            First line contains the number of elements in the series.
+            Input 1 : A set of colors
             <br />
-            Second line contains the N integers of space separated.
+            Input 2 : A string
           </p>
           <br />
           <h3> CONSTRAINTS: - </h3>{' '}
           <p>
             {' '}
-            0 &lt; N &lt; 10 ^ 5 <br />0 &lt; A[i] &lt; 10^10{' '}
+            0 &lt; strlen(A) &lt; 10 <br />0 &lt; strlen(A[i]) &lt; 10
+            <sup>10</sup>{' '}
           </p>
           <br />
-          <h3> OUTPUT: - </h3> <p>Print the missing number.</p>{' '}
+          <h3> OUTPUT: - </h3> <p>Print the predicted color.</p>{' '}
         </div>
         <br />
         <div className="sample-input">
           <h3> SAMPLE INPUT 1: - </h3>{' '}
           <p>
             {' '}
-            5 <br />5 10 7 6 9{' '}
+            Blue green red brown purple rose white black brown <br />
+            He wants flowers
           </p>
           <br />
           <h3> SAMPLE OUTPUT 1: - </h3> <p> 8 </p>
           <br /> <h3> EXPLANATION 1: - </h3>{' '}
-          <p>The missed value in the series is 8.</p>{' '}
+          <p>
+            72+101+119+97+110+116+102+108+111+119+101+114+115=1385
+            <br />
+            1+3+8+5=17
+            <br />
+            1+7=8
+          </p>{' '}
         </div>
         <br />
-        <div className="sample-input">
-          <h3> SAMPLE INPUT 2: - </h3> <p>7 2 3 5 4 8 7 9</p>
-          <br />
-          <h3> SAMPLE OUTPUT 2: - </h3> <p> 6 </p>
-          <br /> <h3> EXPLANATION 2: - </h3>{' '}
-          <p>The missed value in the series is 6.</p>
-        </div>{' '}
       </main>
       <div className="gift-container">
         <div className="box">
           <div className="box-body">
             <div className="input-container">
-              3
-              <br />
-              9998 10000 10001
+              green red blue violet brown black pink black violet brown <br />
+              <br />I like coding.
             </div>
             <div className="box-lid">
               <div className="box-bowtie"></div>

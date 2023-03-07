@@ -33,7 +33,7 @@ export default function Question1Screen() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    if (password === '12345') {
+    if (password === "'225''229''110''109'") {
       try {
         if (!stages.includes(3)) {
           const rollno = userInfo.rollno;
@@ -83,62 +83,70 @@ export default function Question1Screen() {
       <main className="question-container">
         <div className="question-description">
           <p>
-            Raju,a student weak in maths is doing his maths homework.His
-            homework is to write the alphabet series upto n terms.While doing
-            his father called him.He went and after sometime he starts resuming
-            his work.But atlast,he found that he had missed a number within the
-            range. Help him to find the missing number. The secret key for the
-            next stage is camel case words of the result.
+            Raja has a 10 days holidays for his semester, while he was alone in
+            home, he gets bored. He wants to play a game with his friend Ragu.
+            He has two arrays of characters. His task is to add the respective
+            characters. He need reverse the first script and perform operation.
+            Help him to add those characters. The secret key for the next stage
+            is result and each value is enclosed within single quotes.
             <br />
             <strong>Note:-</strong>
             <span>Don't consider white spaces in secret key.</span>
           </p>{' '}
         </div>{' '}
         <div className="format">
-          <h3> INPUT: - </h3>{' '}
-          <p>
-            First line contains the number of elements in the series.
-            <br />
-            Second line contains the N integers of space separated.
-          </p>
+          <h3> INPUT: - </h3> <p>First line contains the 2D array.</p>
           <br />
           <h3> CONSTRAINTS: - </h3>{' '}
           <p>
-            {' '}
-            0 &lt; N &lt; 10 ^ 5 <br />0 &lt; A[i] &lt; 10^10{' '}
+            Array contains lowercase alphabets.
+            <br /> 0 &lt; strlen(A[i]) &lt; 10
+            <sup>5</sup> <br />0 &lt; strlen(A) &lt; 2{' '}
           </p>
           <br />
-          <h3> OUTPUT: - </h3> <p>Print the missing number.</p>{' '}
+          <h3> OUTPUT: - </h3> <p>Print the resultant array.</p>{' '}
         </div>
         <br />
         <div className="sample-input">
-          <h3> SAMPLE INPUT 1: - </h3>{' '}
-          <p>
-            {' '}
-            5 <br />5 10 7 6 9{' '}
-          </p>
+          <h3> SAMPLE INPUT 1: - </h3> <p>[ [‘a’,’b’,’c’],[‘d’,’e’,’f’] ]</p>
           <br />
-          <h3> SAMPLE OUTPUT 1: - </h3> <p> 8 </p>
+          <h3> SAMPLE OUTPUT 1: - </h3> <p> [201,199,197]</p>
           <br /> <h3> EXPLANATION 1: - </h3>{' '}
-          <p>The missed value in the series is 8.</p>{' '}
+          <p>
+            Reversing the first subscript [c , b , a]
+            <br />
+            Reversing the second subscript [ f, e, d]
+            <br />
+            Adding - ASCII values of c and f - 201 , b and e – 199 , d and a
+            -197
+            <br />
+            Res = [201, 199 , 197]
+            <br />
+          </p>{' '}
         </div>
         <br />
         <div className="sample-input">
-          <h3> SAMPLE INPUT 2: - </h3> <p>7 2 3 5 4 8 7 9</p>
+          <h3> SAMPLE INPUT 2: - </h3> <p>[ [‘x’,’y’,’z’],[‘p’,’q’,’r’] ]</p>
           <br />
-          <h3> SAMPLE OUTPUT 2: - </h3> <p> 6 </p>
+          <h3> SAMPLE OUTPUT 2: - </h3> <p> [234,234,234] </p>
           <br /> <h3> EXPLANATION 2: - </h3>{' '}
-          <p>The missed value in the series is 6.</p>
+          <p>
+            Reversing the first subscript [z , y , x]
+            <br />
+            Reversing the second subscript [ p, q, r]
+            <br />
+            Adding - ASCII values of z and p - 234 , y and q – 234 , x and r
+            -234
+            <br />
+            Res = [234, 234 , 234]
+            <br />
+          </p>
         </div>{' '}
       </main>
       <div className="gift-container">
         <div className="box">
           <div className="box-body">
-            <div className="input-container">
-              3
-              <br />
-              9998 10000 10001
-            </div>
+            <div className="input-container">[['m','n','r','q'],['p','s']]</div>
             <div className="box-lid">
               <div className="box-bowtie"></div>
             </div>
