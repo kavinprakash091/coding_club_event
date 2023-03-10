@@ -132,7 +132,7 @@ export default function Question1Screen() {
           <p>
             {' '}
             happy learning <br />
-            113{' '}
+            112{' '}
           </p>
           <br />
           <h3> SAMPLE OUTPUT 2: - </h3> <p> 2 </p>
